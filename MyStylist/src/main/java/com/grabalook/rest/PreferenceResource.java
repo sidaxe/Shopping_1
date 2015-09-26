@@ -1,5 +1,6 @@
 package com.grabalook.rest;
 
+import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
@@ -15,7 +16,7 @@ public class PreferenceResource {
 		 
 		return Response.status(200).entity(output).build();
 	}
-	
+	@GET
 	@Path("/view")
 	public Response viewPreferences(@QueryParam("username") String userName,
 			@QueryParam("password") String password){

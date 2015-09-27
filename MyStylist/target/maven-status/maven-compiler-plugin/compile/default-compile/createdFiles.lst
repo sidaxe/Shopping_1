@@ -1,1 +1,5 @@
+com\grabalook\rest\OrderResource.class
+com\grabalook\rest\RecommendationResource.class
+com\grabalook\rest\RequestResource.class
 com\grabalook\rest\UserResource.class
+com\grabalook\rest\PreferenceResource.class

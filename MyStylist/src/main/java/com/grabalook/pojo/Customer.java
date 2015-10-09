@@ -4,7 +4,15 @@ public class Customer {
 	
 	int id;
 	String name;
-	String EmailId;
+	String emailId;
+	String profilePicture;
+	
+	public String getProfilePicture() {
+		return profilePicture;
+	}
+	public void setProfilePicture(String profilePicture) {
+		this.profilePicture = profilePicture;
+	}
 	public int getId() {
 		return id;
 	}
@@ -18,14 +26,15 @@ public class Customer {
 		this.name = name;
 	}
 	public String getEmailId() {
-		return EmailId;
+		return emailId;
 	}
 	public void setEmailId(String emailId) {
-		EmailId = emailId;
+		emailId = emailId;
 	}
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + ", name=" + name + ", EmailId=" + EmailId + "]";
+		return "Customer [id=" + id + ", name=" + name + ", emailId=" + emailId + ", profilePicture=" + profilePicture
+				+ "]";
 	}
 	
 	

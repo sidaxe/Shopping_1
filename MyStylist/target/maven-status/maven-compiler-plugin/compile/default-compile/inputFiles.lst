@@ -2,4 +2,7 @@
 /home/sidhant/Shopping/Shopping_1/MyStylist/src/main/java/com/grabalook/rest/OrderResource.java
 /home/sidhant/Shopping/Shopping_1/MyStylist/src/main/java/com/grabalook/rest/PreferenceResource.java
 /home/sidhant/Shopping/Shopping_1/MyStylist/src/main/java/com/grabalook/rest/RecommendationResource.java
+/home/sidhant/Shopping/Shopping_1/MyStylist/src/main/java/com/grabalook/pojo/Customer.java
+/home/sidhant/Shopping/Shopping_1/MyStylist/src/main/java/com/grabalook/dao/CustomerDao.java
+/home/sidhant/Shopping/Shopping_1/MyStylist/src/main/java/com/grabalook/rest/ShoppingException.java
 /home/sidhant/Shopping/Shopping_1/MyStylist/src/main/java/com/grabalook/rest/UserResource.java

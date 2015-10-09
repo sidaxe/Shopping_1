@@ -27,9 +27,8 @@ public class UserResource {
 	@Path("/signin")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response signin(Customer customer){
-		Customer customerr;
-		return null;
-		
+		System.out.println(customer.getEmailId());
+		return Response.status(200).build();	
 		
 	}
 	
@@ -44,8 +43,10 @@ public class UserResource {
 	
 	@POST
 	@Path("/signup")
-	public Response signup(){
-		return null;
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response signup(Customer customer){
+		System.out.println(customer.getEmailId());
+		return Response.status(200).build();
 	}
 	
 	

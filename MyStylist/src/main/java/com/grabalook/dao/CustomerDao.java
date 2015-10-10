@@ -2,12 +2,14 @@ package com.grabalook.dao;
 
 import java.util.List;
 
-import com.grabalook.pojo.Customer;
+import com.grabalook.pojo.User;
+
+
 
 public interface CustomerDao {
-	public Customer getCustomer(String emailId);
-	public Customer getCustomer(int id);
-	public List<Customer> getAllCustomers();
+	public User getCustomer(String emailId);
+	public User getCustomer(int id);
+	public List<User> getAllCustomers();
 	
 	
 

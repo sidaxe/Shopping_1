@@ -13,7 +13,7 @@ import com.grabalook.pojo.Customer;
 
 @Path("/users")
 public class UserResource {
-	
+	/*
 	/*	
 		private UserDAO userDAO;
 			public static Log getLog() {
@@ -521,6 +521,7 @@ public class UserResource {
 			if (namedEntityApi == null) {
 				namedEntityApi = (NamedEntityApi) SpringApplicationContext.getBean("namedEntityApi");
 			}
+
 			return namedEntityApi;
 		}
 
@@ -528,6 +529,22 @@ public class UserResource {
 			this.namedEntityApi = namedEntityApi;
 		}
 */
+	@GET
+	@Path("/signin")
+	public Response signin(@QueryParam("username") String userName,
+			@QueryParam("password") String password){
+		String output = "Hello : " + userName + password;
+		 
+		return Response.status(200).entity(output).build();
+	}
+	*/
+	@POST
+	@Path("/signin")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response signin(Customer customer){
+		System.out.println(customer.getEmailId());
+		return Response.status(200).build();	
+		
 	}
 
 

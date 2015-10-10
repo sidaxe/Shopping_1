@@ -2,7 +2,7 @@ com\grabalook\rest\OrderResource.class
 com\grabalook\rest\ShoppingException.class
 com\grabalook\dao\CustomerDao.class
 com\grabalook\rest\RecommendationResource.class
+com\grabalook\pojo\User.class
 com\grabalook\rest\RequestResource.class
 com\grabalook\rest\UserResource.class
-com\grabalook\pojo\Customer.class
 com\grabalook\rest\PreferenceResource.class

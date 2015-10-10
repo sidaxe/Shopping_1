@@ -8,11 +8,14 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.grabalook.dao.UserDao;
 import com.grabalook.pojo.User;
 
 
 @Path("/users")
 public class UserResource {
+	
+	
 	/*
 	/*	
 		private UserDAO userDAO;
@@ -529,6 +532,7 @@ public class UserResource {
 			this.namedEntityApi = namedEntityApi;
 		}
 */
+	private UserDao userDao;
 	@GET
 	@Path("/signin")
 	public Response signin(@QueryParam("username") String userName,
@@ -539,10 +543,11 @@ public class UserResource {
 	}
 
 	@POST
-	@Path("/signin")
+	@Path("/signup")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response signin(User customer){
-		System.out.println(customer.getEmail());
+	public Response signup(User user){
+	    System.out.println(user);
+	    userDao.addUser(user);
 		return Response.status(200).build();	
 		
 	}

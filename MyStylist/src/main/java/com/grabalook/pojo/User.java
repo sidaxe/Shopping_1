@@ -1,7 +1,16 @@
 package com.grabalook.pojo;
 
-public class User {
+import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+public class User implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7499324136562971476L;
 	//int id;
 	String name;
 	String email;

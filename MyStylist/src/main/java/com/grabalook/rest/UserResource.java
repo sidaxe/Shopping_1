@@ -1,5 +1,9 @@
 package com.grabalook.rest;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.POST;
@@ -548,14 +552,14 @@ public class UserResource {
 	@POST
 	@Path("/signup")
 	@Consumes(MediaType.APPLICATION_JSON)
-	//@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response signup(User user){
-		//user.setId(1);
+		user.setId(1);
 	    System.out.println(user);
 	   // userDao.addUser(user);
 		//return Response.status(200).entity(user).build();	
 	    if(user.getEmail().equals("sidhant"))
-	    	return Response.status(200).build();
+	    	return Response.status(200).entity(user).build();
 	    else
 	    {
 	    	return Response.status(404).entity("user not found").build();
@@ -563,6 +567,27 @@ public class UserResource {
 	    
 		
 	}
+	
+
+//	@POST
+//	@Path("/signup")
+//	//@Consumes(MediaType.APPLICATION_JSON)
+//	@Produces(MediaType.APPLICATION_JSON)
+//	public Response signup(InputStream incomingData){
+//    	StringBuilder builder = new StringBuilder();
+//     	try {
+//  		BufferedReader in = new BufferedReader(new InputStreamReader(incomingData));
+//			String line = null;
+//			while ((line = in.readLine()) != null) {
+//				builder.append(line);
+//			}
+//		} catch (Exception e) {
+//			
+//		}
+//     	System.out.println(builder.toString());
+//     	String requestString=builder.toString();
+//     	
+//       return Response.status(200).entity(requestString).build();
+//	}
+
 }
-
-

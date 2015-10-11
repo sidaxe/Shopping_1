@@ -1,11 +1,6 @@
 package com.grabalook.rest;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-
 import javax.ws.rs.Consumes;
-import javax.ws.rs.FormParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -14,6 +9,7 @@ import javax.ws.rs.core.Response;
 
 import com.grabalook.dao.UserDao;
 import com.grabalook.pojo.User;
+import com.grabalook.pojo.UserResponse;
 
 
 @Path("/users")
@@ -537,31 +533,35 @@ public class UserResource {
 		}
 */
 	private UserDao userDao;
-	@POST
-	@Path("/signin")
-	public Response signin(@FormParam("username") String userName,
-			@FormParam("password") String password){
-		String output = "Hello : " + userName + password;
-		System.out.println(output);
-		if(userName!=null && userName.equals("sidhant"))
-		return Response.status(200).entity(output).build();
-		else
-		return Response.status(200).entity("User not found").build();
-	}
+//	@POST
+//	@Path("/signin")
+//	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+//	public Response signin(@FormParam("username") String userName,
+//			@FormParam("password") String password){
+//		String output = "Hello : " + userName + password;
+//		System.out.println(output);
+//		if(userName!=null && userName.equals("sidhant"))
+//		return Response.status(200).entity(output).build();
+//		else
+//		return Response.status(200).entity("User not found").build();
+//	}
 
 	@POST
-	@Path("/signup")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response signup(User user){
-		user.setId(1);
+		user.setId(10);
 	    System.out.println(user);
 	   // userDao.addUser(user);
 		//return Response.status(200).entity(user).build();	
+	   
 	    if(user.getEmail().equals("sidhant"))
-	    	return Response.status(200).entity(user).build();
+	    {	 UserResponse userResponse =new UserResponse(user.getId(),true,"User Added to Db");
+	    	return Response.status(200).entity(userResponse).build();
+	    }
 	    else
 	    {
+	    	UserResponse userResponse =new UserResponse(user.getId(),false,"User couldnt be added");
 	    	return Response.status(404).entity("user not found").build();
 	    }
 	    

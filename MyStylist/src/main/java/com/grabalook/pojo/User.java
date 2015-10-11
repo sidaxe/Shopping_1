@@ -2,16 +2,18 @@ package com.grabalook.pojo;
 
 import java.io.Serializable;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import com.google.appengine.repackaged.org.codehaus.jackson.annotate.JsonIgnore;
 
-@XmlRootElement
+
 public class User implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 7499324136562971476L;
-	//int id;
+
+//	@JsonIgnore
+	int id;
 	String name;
 	String email;
 	String profilePic;
@@ -22,12 +24,12 @@ public class User implements Serializable {
 	public void setProfilePic(String profilePicture) {
 		this.profilePic = profilePicture;
 	}
-//	public int getId() {
-//		return id;
-//	}
-//	public void setId(int id) {
-//		this.id = id;
-//	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getName() {
 		return name;
 	}
@@ -42,8 +44,7 @@ public class User implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Customer [name=" + name + ", emailId=" + email + ", profilePicture=" + profilePic
-				+ "]";
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", profilePic=" + profilePic + "]";
 	}
 	
 	

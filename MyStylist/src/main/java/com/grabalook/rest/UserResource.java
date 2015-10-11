@@ -1,10 +1,10 @@
 package com.grabalook.rest;
 
 import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -533,22 +533,34 @@ public class UserResource {
 		}
 */
 	private UserDao userDao;
-	@GET
+	@POST
 	@Path("/signin")
-	public Response signin(@QueryParam("username") String userName,
-			@QueryParam("password") String password){
+	public Response signin(@FormParam("username") String userName,
+			@FormParam("password") String password){
 		String output = "Hello : " + userName + password;
-		 
+		System.out.println(output);
+		if(userName!=null && userName.equals("sidhant"))
 		return Response.status(200).entity(output).build();
+		else
+		return Response.status(200).entity("User not found").build();
 	}
 
 	@POST
 	@Path("/signup")
 	@Consumes(MediaType.APPLICATION_JSON)
+	//@Produces(MediaType.APPLICATION_JSON)
 	public Response signup(User user){
+		//user.setId(1);
 	    System.out.println(user);
-	    userDao.addUser(user);
-		return Response.status(200).build();	
+	   // userDao.addUser(user);
+		//return Response.status(200).entity(user).build();	
+	    if(user.getEmail().equals("sidhant"))
+	    	return Response.status(200).build();
+	    else
+	    {
+	    	return Response.status(404).entity("user not found").build();
+	    }
+	    
 		
 	}
 }

@@ -9,13 +9,13 @@ public class UserResponse implements Serializable{
 	 */
 	private static final long serialVersionUID = -7568813201422195139L;
 	int id;
-	boolean isNewUser;
+	boolean newUser;
 	String message;
 	
-	public UserResponse(int id, boolean isNewUser, String message) {
+	public UserResponse(int id, boolean newUser, String message) {
 		super();
 		this.id = id;
-		this.isNewUser = isNewUser;
+		this.newUser = newUser;
 		this.message = message;
 	}
 	public int getId() {
@@ -24,11 +24,11 @@ public class UserResponse implements Serializable{
 	public void setId(int id) {
 		this.id = id;
 	}
-	public boolean isNewUser() {
-		return isNewUser;
+	public boolean newUser() {
+		return newUser;
 	}
-	public void setNewUser(boolean isNewUser) {
-		this.isNewUser = isNewUser;
+	public void setNewUser(boolean newUser) {
+		this.newUser = newUser;
 	}
 	public String getMessage() {
 		return message;
@@ -38,7 +38,7 @@ public class UserResponse implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "UserResponse [id=" + id + ", isNewUser=" + isNewUser + ", message=" + message + "]";
+		return "UserResponse [id=" + id + ", newUser=" + newUser + ", message=" + message + "]";
 	}
 	
 }

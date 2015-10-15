@@ -1,15 +1,23 @@
 package com.grabalook.rest;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.grabalook.dao.UserDao;
 import com.grabalook.pojo.User;
 import com.grabalook.pojo.UserResponse;
+
+
+
+
 
 
 @Path("/users")
@@ -532,7 +540,6 @@ public class UserResource {
 			this.namedEntityApi = namedEntityApi;
 		}
 */
-	private UserDao userDao;
 //	@POST
 //	@Path("/signin")
 //	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
@@ -546,7 +553,12 @@ public class UserResource {
 //		return Response.status(200).entity("User not found").build();
 //	}
 
+	//@Autowired
+	//UserDao userDao;
+	
+	
 	@POST
+	@Path("/signup")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response signup(User user){
@@ -563,11 +575,19 @@ public class UserResource {
 	    {
 	    	UserResponse userResponse =new UserResponse(user.getId(),false,"User couldnt be added");
 	    	return Response.status(404).entity("user not found").build();
-	    }
-	    
+	    } 
 		
 	}
 	
+	@GET
+	@Path("/getuser/{userid}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public User getUser(@PathParam("userid") int userId ){
+		//User user=userDao.getUser(1);
+		//User user=userDao.getUser(userId);
+		User user=new User();
+		return user;
+	}
 
 //	@POST
 //	@Path("/signup")

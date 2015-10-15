@@ -2,8 +2,8 @@ package com.grabalook.pojo;
 
 import java.io.Serializable;
 
-import com.google.appengine.repackaged.org.codehaus.jackson.annotate.JsonIgnore;
 
+import com.google.appengine.repackaged.org.codehaus.jackson.annotate.JsonIgnore;
 
 public class User implements Serializable {
 
@@ -12,12 +12,21 @@ public class User implements Serializable {
 	 */
 	private static final long serialVersionUID = 7499324136562971476L;
 
-//	@JsonIgnore
+	
 	int id;
 	String name;
 	String email;
 	String profilePic;
 	
+	public User(){}
+	
+	public User(int id, String name, String email, String profilePic) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.profilePic = profilePic;
+	}
 	public String getProfilePic() {
 		return profilePic;
 	}

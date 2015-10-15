@@ -1,22 +1,25 @@
-package DaoImpl;
+package com.grabalook.daoImpl;
 
 import java.util.List;
+
+import org.springframework.stereotype.Component;
 
 import com.grabalook.dao.UserDao;
 import com.grabalook.pojo.User;
 
-public class UserDaoImpl implements UserDao{
+@Component
+public class UserDaoImpl  implements UserDao {
 
 	@Override
 	public User getUser(String emailId) {
-		// TODO Auto-generated method stub
-		return null;
+		User user=new User(1,"Sidhant","sidhant@gmail.com","url");
+		return user;
 	}
 
 	@Override
 	public User getUser(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		User user=new User(1,"Sidhant","sidhant@gmail.com","url");
+		return user;
 	}
 
 	@Override
